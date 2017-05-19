@@ -19,7 +19,7 @@ module.exports = {
 
   models: {
     connection: 'preprod',
-    migrate: 'drop'
+    migrate: 'alter'
   }
 
 
