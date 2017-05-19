@@ -1,19 +1,20 @@
-# a live API to show events at a conference
+# LiveAPI: show activities happening live
 
-a REST API to expose activities at a Developer Conference.
+a REST API to show activities happening live
 
-used for DevNet Create 2017, testable at https://devnetcreate-api.herokuapp.com/
+build with sails.js, data persisted in postGreSQL
+
+testable at https://devnetcreate-api.herokuapp.com/, for [DevNet Create 2017](https://devnetcreate.io/2017/)
 
 
 ## API Resources
 
 Public ressources to search for activities
-- GET /api/v1/activities: all activities ordered by begin date ASC
 - GET /api/v1/activities/next: upcoming activities (all activities who begin after now, ie, do not comprise activities that are in progress) 
 - GET /api/v1/activities/current: activities in progress (begin date is passed, but end date has not happened yet)
+- GET /api/v1/activities: all activities ordered by begin date ASC
 
 Note that the project also contains an Administration API secured by a Bearer token that lets administrators Create and Delete activities.
-
 
 ### POSTMAN
 
@@ -47,7 +48,14 @@ The bot consumes the API to display current and upcoming activities in Cisco Spa
 - Optionally customize the [Activity](/api/models/Activity.js) fields
 - NODE_ENV=development node app.js
 - Test the API locally at http://localhost:1337
-- Now, deploy the API on Heroku, and customize the env variable to point to the production database
+- Deploy the API on Heroku, and customize the env variable to point to the production database
+
+
+## Dataset
+
+You can use the postman collection to fill in data manually,
+or simply write a batch in python or nodeJS to inject a CSV file via the API.
+
 
 # License
 
