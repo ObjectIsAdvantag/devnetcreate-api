@@ -38,6 +38,11 @@ module.exports = {
       required: true
     },
 
+    fullDay: {
+      type: 'string',
+      required: true
+    },
+
     begin: {
       type: 'string',
        required: true
